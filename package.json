@@ -2,9 +2,9 @@
   "name": "nextjs-1231-template",
   "version": "1.0.0",
   "scripts": {
-    "dev": "../pastoo-video/node_modules/.bin/next",
-    "build": "../pastoo-video/node_modules/.bin/next build",
-    "start": "../pastoo-video/node_modules/.bin/next start",
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
     "post-update": "yarn upgrade --latest"
   },
   "dependencies": {
