@@ -7,22 +7,17 @@ export const aparatCoverExractor = (srcURL) => {
   const videoHash = new URL(srcURL).pathname.split("/").pop();
   const apiURL = `https://www.aparat.com/etc/api/video/videohash/${videoHash}`;
   return axios.get(apiURL).then((res) => {
-    // @ts-ignore
-    console.log("data aparat", res.data.video.big_poster);
-    // @ts-ignore
-    return res.data.video.big_poster;
+    return res.data;
   });
 };
 
 
 export const youtubeCoverExtractor = async (srcURL) => {
   // e.g. https://www.youtube.com/watch?v=5JJrJGZ_LjM
-  console.log(`youtube srcURL`, srcURL);
-
   const data = await getLinkPreview(srcURL, {
     timeout: 5_000, // NOTE: This wont work in the filtered networks!
   });
-  return data.images[0];
+  return data;
 };
 
 export default async (req, res) => {
